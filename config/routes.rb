@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
-  scope 'api/v1' do
-    resources :users do
-      resources :cars
-      resources :appointment
+  # devise_for :users,
+  #   controllers: {
+  #     sessions: 'users/sessions',
+  #     registrations: 'users/registrations'
+  # }
+
+  namespace :api do
+    namespace :v1 do
+    
+      resources :users do
+        resources :cars
+        resources :appointment
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
