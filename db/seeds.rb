@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,3 +10,16 @@
 User.create(name: 'Daniel', email: 'test@mail.com', password: 'password')
 User.create(name: 'Meqdam', email: 'test4@mail.com', password: 'password')
 User.create(name: 'Lichapa', email: 'test5@mail.com', password: 'password')
+=======
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
+
+User.create(name: 'Daniel', email: 'test@mail.com', password: 'password')
+User.create(name: 'Meqdam', email: 'test4@mail.com', password: 'password')
+User.create(name: 'Lichapa', email: 'test5@mail.com', password: 'password')
+>>>>>>> 996569744ec7d3dea935e4e116089d0a57b548f5
