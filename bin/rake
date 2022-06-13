@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-#!/usr/bin/env ruby.exe
-require_relative '../config/boot'
-require 'rake'
-Rake.application.run
-=======
 #!/usr/bin/env ruby.exe
 require_relative "../config/boot"
 require "rake"
 Rake.application.run
->>>>>>> 996569744ec7d3dea935e4e116089d0a57b548f5

@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-#!/usr/bin/env ruby.exe
-APP_PATH = File.expand_path('../config/application', __dir__)
-require_relative '../config/boot'
-require 'rails/commands'
-=======
 #!/usr/bin/env ruby.exe
 APP_PATH = File.expand_path("../config/application", __dir__)
 require_relative "../config/boot"
 require "rails/commands"
->>>>>>> 996569744ec7d3dea935e4e116089d0a57b548f5
