@@ -20,7 +20,7 @@ class Api::V1::UsersController < ApplicationController
     render json: user
   end
 
-  def delete
+  def destroy
     user = User.find(params[:id])
     user.destroy
     head :no_content, status: :ok
