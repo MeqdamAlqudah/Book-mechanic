@@ -6,7 +6,12 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = User.create(user_param)
-    render json: user
+
+    if user.save
+      render json: user
+    else
+      render json: user.error
+    end
   end
 
   def update
