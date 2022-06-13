@@ -21,8 +21,11 @@ class Api::V1::CarsController < ApplicationController
   def update
     car = Car.find(params[:id])
 
-    car.update(car_params)
-    render json: cars
+    if car.update(car_params)
+      render json: cars
+    else
+      render json: cars.error
+    end
   end
 
   def destroy

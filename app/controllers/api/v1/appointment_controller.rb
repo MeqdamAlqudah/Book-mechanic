@@ -5,6 +5,7 @@ class Api::V1::AppointmentController < ApplicationController
 
   def create
     appointment = Appointment.new(appointment_params)
+
     if appointment.save
       render json: appointments
     else
@@ -14,7 +15,8 @@ class Api::V1::AppointmentController < ApplicationController
 
   def update
     appointment = Appointment.find(params[:id])
-    if car.update(appointment_params)
+
+    if appointment.update(appointment_params)
       render json: appointments
     else
       render json: appointment_params.error
