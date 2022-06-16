@@ -3,14 +3,20 @@ class Api::V1::UsersController < ApplicationController
     users = User.all
     render json: users
   end
+
   def show
-    token = react_component 'Form', authenticity_token: form_authenticity_token
-    @user = User.find(params[:id])
-    render json: token
+     @user = User.find(params[:id])
+    render json: @user
   end
+
   def create
     user = User.create(user_param)
-    render json: user
+
+    if user.save
+      render json: user
+    else
+      render json: user.error
+    end
   end
 
   def update
@@ -19,14 +25,14 @@ class Api::V1::UsersController < ApplicationController
     render json: user
   end
 
-  def delete
+  def destroy
     user = User.find(params[:id])
     user.destroy
     head :no_content, status: :ok
   end
 
   def user_param
-    params.require(:user).permit(:name, :email, :password, :phone, :profession, :address)
+    params.require(:user).permit(:name, :email, :password, :phone, :profession, :address, :photo)
   end
 end
 
