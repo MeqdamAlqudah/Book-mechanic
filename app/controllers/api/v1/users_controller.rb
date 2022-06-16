@@ -3,7 +3,11 @@ class Api::V1::UsersController < ApplicationController
     users = User.all
     render json: users
   end
-
+  def show
+    token = react_component 'Form', authenticity_token: form_authenticity_token
+    @user = User.find(params[:id])
+    render json: token
+  end
   def create
     user = User.create(user_param)
     render json: user
