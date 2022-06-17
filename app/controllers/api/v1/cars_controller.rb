@@ -12,9 +12,9 @@ class Api::V1::CarsController < ApplicationController
     car = Car.new(car_params)
 
     if car.save
-      render json: cars
+      render json: car
     else
-      render json: cars.error
+      render json: car.error
     end
   end
 
