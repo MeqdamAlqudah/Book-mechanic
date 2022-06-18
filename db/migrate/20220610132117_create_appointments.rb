@@ -5,7 +5,6 @@ class CreateAppointments < ActiveRecord::Migration[7.0]
       t.datetime :date
       t.references :user, null: false, foreign_key: true
       t.references :car, null: false, foreign_key: true
-
       t.timestamps
     end
   end
