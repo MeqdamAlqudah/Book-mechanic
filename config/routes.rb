@@ -7,10 +7,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
       resources :cars do
-        collection { post :create, via: :options  }
+        collection { post :create, via: :options }
       end
       resources :appointment
     end
   end
-
 end

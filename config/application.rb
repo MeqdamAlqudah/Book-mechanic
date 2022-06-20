@@ -1,6 +1,6 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,8 +15,8 @@ module BookMechanic
         origins '*'
         resource '*',
                  headers: :any,
-                 expose: %w(access-token expiry token-type uid client),
-                 methods: %i(post)
+                 expose: %w[access-token expiry token-type uid client],
+                 methods: %i[post]
       end
     end
     # Configuration for the application, engines, and railties goes here.
