@@ -10,9 +10,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    super
-    render json: {"email"=> "memuq56@gmail.com"}
- 
+    user = User.where(email:params[:session][:email])
+    render json:user
   end
 
   # DELETE /resource/sign_out
