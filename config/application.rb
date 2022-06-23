@@ -19,6 +19,11 @@ module BookMechanic
                  methods: %i[post]
       end
     end
+    config.factory_bot.definition_file_paths = ["spec/factories"]
+config.generators do |g|
+  g.factory_bot dir: '/spec/factories'
+end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
