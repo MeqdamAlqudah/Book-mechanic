@@ -10,7 +10,7 @@ class Api::V1::AppointmentController < ApplicationController
     if appointment.save
       render json: appointment
     else
-      render json: appointment.errors.full_messages , status: :unprocessable_entity
+      render json: appointment.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -33,6 +33,6 @@ class Api::V1::AppointmentController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:description, :date,:user_id,:car_id)
+    params.require(:appointment).permit(:description, :date, :user_id, :car_id)
   end
 end

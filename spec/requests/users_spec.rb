@@ -6,7 +6,7 @@ RSpec.describe 'Appointments', type: :request do
     before do
       FactoryBot.create_list(:user, 5)
 
-      get "/api/v1/users"
+      get '/api/v1/users'
     end
     it 'returns all users' do
       expect(json.size).to eq(5)
@@ -17,15 +17,14 @@ RSpec.describe 'Appointments', type: :request do
     end
   end
   describe 'POST /create' do
-
     context 'with invalid parameters' do
       let(:user) { create(:user) }
 
       before do
-        post "/api/v1/users/", params:
-                          { "user" =>{
-                            "description" =>'',
-                            "date" => '',
+        post '/api/v1/users/', params:
+                          { 'user' => {
+                            'description' => '',
+                            'date' => ''
                           } }
       end
 
@@ -34,15 +33,15 @@ RSpec.describe 'Appointments', type: :request do
       end
     end
   end
-    describe "DELETE /destroy" do
-      let(:user) { create(:user) }
+  describe 'DELETE /destroy' do
+    let(:user) { create(:user) }
 
-      before do
-        delete "/api/v1/users/#{user.id}"
-      end
-
-      it 'returns status code 204' do
-        expect(response).to have_http_status(204)
-      end
+    before do
+      delete "/api/v1/users/#{user.id}"
     end
+
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
+    end
+  end
 end

@@ -25,11 +25,11 @@ gem 'puma', '~> 5.0'
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-gem "bcrypt", "~> 3.1.7"
+gem 'bcrypt', '~> 3.1.7'
 gem 'rspec-support', '~> 3.4', '>= 3.4.1'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'cancancan'
 gem 'tzinfo-data'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
@@ -42,11 +42,11 @@ gem 'bootsnap', require: false
 gem 'factory_bot'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'rspec-rails'
   gem 'rswag-specs', '~> 2.5', '>= 2.5.1'
-  gem "database_cleaner"
 end
 
 group :development do
@@ -54,11 +54,11 @@ group :development do
   # gem "spring"
 end
 group :test do
+  gem 'capybara'
   gem 'faker'
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem 'warden'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'warden'
 end
 gem 'ffi', '~> 1.15', '>= 1.15.5'
 gem 'jwt', '~> 2.4', '>= 2.4.1'
