@@ -1,6 +1,6 @@
 class Api::V1::AppointmentController < ApplicationController
   def index
-    appointments = Appointment.where(user_id: params[:user_id])
+    appointments = Appointment.all
     render json: appointments
   end
 
@@ -10,7 +10,7 @@ class Api::V1::AppointmentController < ApplicationController
     if appointment.save
       render json: appointment
     else
-      render json: appointment.errors.full_messages
+      render json: appointment.errors.full_messages , status: :unprocessable_entity
     end
   end
 

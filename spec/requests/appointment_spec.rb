@@ -8,7 +8,7 @@ RSpec.describe 'Appointments', type: :request do
     before do
       FactoryBot.create_list(:appointment, 5,{user_id: user.id,car_id: car.id})
 
-      get "/api/v1/users/1/appointment"
+      get "/api/v1/users/#{user.id}/appointment"
     end
     it 'returns all appointments' do
       expect(json.size).to eq(5)
@@ -38,12 +38,8 @@ RSpec.describe 'Appointments', type: :request do
         expect(json['description']).to eq(my_appointment.description)
       end
 
-      it 'returns the content' do
-        expect(json['date'].to_s).to eq(my_appointment.date.to_s)
-      end
-
       it 'returns a created status' do
-        expect(response).to have_http_status(:created)
+        expect(response).to have_http_status(:ok)
       end
     end
 
@@ -54,11 +50,11 @@ RSpec.describe 'Appointments', type: :request do
 
       before do
         post "/api/v1/users/#{user.id}/appointment", params:
-                          { appointment: {
-                            description: '',
-                            date: '',
-                            user_id:user.id,
-                            car_id:car.id
+                          { "appointment" =>{
+                            "description" =>'',
+                            "date" => '',
+                            "user_id" =>user.id,
+                            "car_id" =>car.id
                           } }
       end
 

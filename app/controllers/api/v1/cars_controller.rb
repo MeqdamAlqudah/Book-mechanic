@@ -16,7 +16,7 @@ class Api::V1::CarsController < ApplicationController
     if car.save
       render json: car
     else
-      render json: car.error
+      render json: car.errors.full_messages,  status: :unprocessable_entity
     end
   end
 
@@ -24,9 +24,9 @@ class Api::V1::CarsController < ApplicationController
     car = Car.find(params[:id])
 
     if car.update(car_params)
-      render json: cars
+      render json: car
     else
-      render json: cars.error
+      render json: car.errors.full_messages,  status: :unprocessable_entity
     end
   end
 
