@@ -24,6 +24,7 @@ class Api::V1::CarsController < ApplicationController
       end
     else
       render json: { 'error' => 'You are not authorized to do this action' }, status: 333
+
     end
   end
 
