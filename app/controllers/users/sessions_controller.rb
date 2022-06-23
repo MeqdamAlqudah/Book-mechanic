@@ -10,9 +10,9 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    render json: { status => 200, message => 'Deleted succsessfuly' }
+  end
 
   # protected
 

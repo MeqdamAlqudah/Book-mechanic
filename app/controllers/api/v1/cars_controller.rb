@@ -1,7 +1,11 @@
 class Api::V1::CarsController < ApplicationController
   def index
     cars = Car.all
-    render json: cars
+    if cars.length.zero?
+      render json: { 'status' => false }, status: 333
+    else
+      render json: cars
+    end
   end
 
   def show
@@ -12,11 +16,15 @@ class Api::V1::CarsController < ApplicationController
 
   def create
     car = Car.new(car_params)
-
-    if car.save
-      render json: car
+    if User.where(id: params[:user_id])[0].role == 'admin'
+      if car.save
+        render json: car
+      else
+        render json: car.errors.full_messages, status: :unprocessable_entity
+      end
     else
-      render json: car.error
+      render json: { 'error' => 'You are not authorized to do this action' }, status: 333
+
     end
   end
 
@@ -24,16 +32,22 @@ class Api::V1::CarsController < ApplicationController
     car = Car.find(params[:id])
 
     if car.update(car_params)
-      render json: cars
+      render json: car
     else
-      render json: cars.error
+      render json: car.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def destroy
     car = Car.find(params[:id])
-    car.destroy
-    head :no_content, status: :ok
+    if User.where(id: params[:user_id])[0].role == 'admin'
+
+      car.destroy
+      head :no_content, status: :ok
+    else
+      render json: { 'error' => 'You are not authorized to do this action' }, status: 333
+
+    end
   end
 
   private

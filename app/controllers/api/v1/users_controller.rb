@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  load_and_authorize_resource
   def index
     users = User.all
     render json: users
@@ -11,12 +12,12 @@ class Api::V1::UsersController < ApplicationController
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
                     photo: params[:photo],
-                    profession: params[:profession])
+                    profession: params[:profession], role: params[:role] || 'default')
 
     if user.save
       render json: user
     else
-      render json: user.errors.full_messages
+      render json: user.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -36,6 +37,6 @@ class Api::V1::UsersController < ApplicationController
 
   def user_param
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :profession, :address,
-                                 :photo)
+                                 :photo, :role)
   end
 end
