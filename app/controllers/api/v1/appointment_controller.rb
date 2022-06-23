@@ -8,9 +8,9 @@ class Api::V1::AppointmentController < ApplicationController
     appointment = Appointment.new(appointment_params)
 
     if appointment.save
-      render json: appointments
+      render json: appointment
     else
-      render json: appointments.error
+      render json: appointment.errors.full_messages
     end
   end
 
@@ -33,6 +33,6 @@ class Api::V1::AppointmentController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:description, :date)
+    params.require(:appointment).permit(:description, :date,:user_id,:car_id)
   end
 end
