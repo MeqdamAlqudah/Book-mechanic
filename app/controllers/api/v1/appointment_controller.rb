@@ -5,8 +5,11 @@ class Api::V1::AppointmentController < ApplicationController
   end
 
   def create
-    appointment = Appointment.new(city: params[:city],
-                date: params[:date])
+    appointment = Appointment.new(description: params[:description],
+                                city: params[:city],
+                                date: params[:date],
+                                user_id: params[:user_id],
+                                car_id: params[:car_id])
 
     if appointment.save
       render json: appointments
@@ -34,6 +37,6 @@ class Api::V1::AppointmentController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:description, :date)
+    params.require(:appointment).permit(:description, :city, :date, :user_id, :car_id)
   end
 end
