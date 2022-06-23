@@ -6,10 +6,10 @@ class Api::V1::AppointmentController < ApplicationController
 
   def create
     appointment = Appointment.new(description: params[:description],
-                                city: params[:city],
-                                date: params[:date],
-                                user_id: params[:user_id],
-                                car_id: params[:car_id])
+                                  city: params[:city],
+                                  date: params[:date],
+                                  user_id: params[:user_id],
+                                  car_id: params[:car_id])
 
     if appointment.save
       render json: appointments
