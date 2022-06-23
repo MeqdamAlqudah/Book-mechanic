@@ -6,11 +6,8 @@ class Api::V1::CarsController < ApplicationController
 
   def show
     car = Car.find(params[:id])
-    appointment = Appointment.where(user_id: car.user_id).where(car_id: car.id).map do |element|
-      { 'description' => element.description, 'date' => element.date }
-    end
-    render json: { 'brand' => car.brand, 'model' => car.model, 'registration' => car.registration, 'photo' => car.photo,
-                   'appointments' => appointment }
+    render json: { 'brand' => car.brand, 'model' => car.model, 'registration' => car.registration,
+                   'photo' => car.photo }
   end
 
   def create

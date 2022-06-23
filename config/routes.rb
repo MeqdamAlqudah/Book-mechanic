@@ -10,6 +10,8 @@ Rails.application.routes.draw do
         collection { post :create, via: :options }
       end
       resources :appointment
+
+    end
     end
   end
 end
