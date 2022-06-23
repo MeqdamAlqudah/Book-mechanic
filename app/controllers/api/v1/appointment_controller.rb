@@ -1,6 +1,6 @@
 class Api::V1::AppointmentController < ApplicationController
   def index
-    appointments = Appointment.where(user_id: params[:user_id])
+    appointments = Appointment.all
     render json: appointments
   end
 
@@ -12,9 +12,9 @@ class Api::V1::AppointmentController < ApplicationController
                                 car_id: params[:car_id])
 
     if appointment.save
-      render json: appointments
+      render json: appointment
     else
-      render json: appointments.error
+      render json: appointment.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -38,5 +38,6 @@ class Api::V1::AppointmentController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:description, :city, :date, :user_id, :car_id)
+
   end
 end
