@@ -38,6 +38,5 @@ class Api::V1::AppointmentController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:description, :city, :date, :user_id, :car_id)
-
   end
 end
