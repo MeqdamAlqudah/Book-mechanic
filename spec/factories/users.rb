@@ -8,6 +8,6 @@ FactoryBot.define do
     sequence(:email) { |n| "#{name.downcase}#{n}@test.com" }
     password { 'password' }
     password_confirmation { 'password' }
-    role {'admin'}
+    role { 'admin' }
   end
 end
