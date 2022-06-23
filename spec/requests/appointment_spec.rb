@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Appointments', type: :request do
   let(:user) { create(:user) }
-  let(:car) {create(:car,user_id: user.id)}
-  let(:appointment) {create(:appointment,user_id: user.id,car_id: car.id)}
+  let(:car) { create(:car, user_id: user.id) }
+  let(:appointment) { create(:appointment, user_id: user.id, car_id: car.id) }
   describe 'GET /index' do
     before do
-      FactoryBot.create_list(:appointment, 5,{user_id: user.id,car_id: car.id})
+      FactoryBot.create_list(:appointment, 5, { user_id: user.id, car_id: car.id })
 
       get "/api/v1/users/#{user.id}/appointment"
     end
@@ -21,16 +21,16 @@ RSpec.describe 'Appointments', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       let(:user) { create(:user) }
-      let(:car) {create(:car,user_id: user.id)}
-      let(:my_appointment) { create(:appointment,user_id:user.id,car_id: car.id) }
+      let(:car) { create(:car, user_id: user.id) }
+      let(:my_appointment) { create(:appointment, user_id: user.id, car_id: car.id) }
 
       before do
         post "/api/v1/users/#{user.id}/appointment", params:
                           { appointment: {
                             description: my_appointment.description,
                             date: my_appointment.date,
-                            user_id:user.id,
-                            car_id:car.id
+                            user_id: user.id,
+                            car_id: car.id
                           } }
       end
 
@@ -45,16 +45,16 @@ RSpec.describe 'Appointments', type: :request do
 
     context 'with invalid parameters' do
       let(:user) { create(:user) }
-      let(:car) {create(:car,user_id: user.id)}
-      let(:my_appointment) { create(:appointment,user_id:user.id,car_id: car.id) }
+      let(:car) { create(:car, user_id: user.id) }
+      let(:my_appointment) { create(:appointment, user_id: user.id, car_id: car.id) }
 
       before do
         post "/api/v1/users/#{user.id}/appointment", params:
-                          { "appointment" =>{
-                            "description" =>'',
-                            "date" => '',
-                            "user_id" =>user.id,
-                            "car_id" =>car.id
+                          { 'appointment' => {
+                            'description' => '',
+                            'date' => '',
+                            'user_id' => user.id,
+                            'car_id' => car.id
                           } }
       end
 
@@ -63,17 +63,17 @@ RSpec.describe 'Appointments', type: :request do
       end
     end
   end
-    describe "DELETE /destroy" do
-      let(:user) { create(:user) }
-      let(:car) {create(:car,user_id: user.id)}
-      let!(:appointment) { FactoryBot.create(:appointment,user_id:user.id,car_id:car.id) }
+  describe 'DELETE /destroy' do
+    let(:user) { create(:user) }
+    let(:car) { create(:car, user_id: user.id) }
+    let!(:appointment) { FactoryBot.create(:appointment, user_id: user.id, car_id: car.id) }
 
-      before do
-        delete "/api/v1/users/#{user.id}/appointment/#{appointment.id}"
-      end
-
-      it 'returns status code 204' do
-        expect(response).to have_http_status(204)
-      end
+    before do
+      delete "/api/v1/users/#{user.id}/appointment/#{appointment.id}"
     end
+
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
+    end
+  end
 end
