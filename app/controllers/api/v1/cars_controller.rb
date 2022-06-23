@@ -1,11 +1,7 @@
 class Api::V1::CarsController < ApplicationController
   def index
     cars = Car.all
-    if cars.length.zero?
-      render json: { 'status' => false }, status: 333
-    else
-      render json: cars
-    end
+    render json: cars
   end
 
   def show
