@@ -12,8 +12,8 @@ class Api::V1::UsersController < ApplicationController
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
                     photo: params[:photo],
-                    profession: params[:profession], role: params[:role])
-    user.role = 'default'
+                    profession: params[:profession], role: params[:role] || "default" )
+
     if user.save
       render json: user
     else
