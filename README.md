@@ -12,7 +12,7 @@ We are a team of four.
 
 [Visit our kanban board](https://github.com/MeqdamAlqudah/Book-mechanic/projects/1)
 
-[Link to screenshot of initial state]()
+[Link to screenshot of initial state](https://user-images.githubusercontent.com/71140133/175422564-606dfb24-8a0c-41da-b613-c39cae009b6a.PNG)
 
 ## Preview
 
