@@ -1,7 +1,6 @@
 class Ability
   include CanCan::Ability
 
-
   def initialize(_user)
     # Define abilities for the passed in user here. For example:
     #
@@ -15,7 +14,6 @@ class Ability
     #   cannot :update, Car
     #   cannot :destroy, Car
     #   can :manage,Appointment,public,true
-
 
     # The first argument to `can` is the action you are giving the user
     # permission to do.
