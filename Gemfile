@@ -38,7 +38,7 @@ gem 'bootsnap', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
-gem 'factory_bot'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'database_cleaner'
@@ -58,6 +58,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'warden'
+  gem 'factory_bot'
 end
 gem 'ffi', '~> 1.15', '>= 1.15.5'
 gem 'jwt', '~> 2.4', '>= 2.4.1'
