@@ -5,7 +5,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    user = User.where(email: params[:session][:email])
+    user = User.where(email: params[:email])
     render json: user
   end
 
