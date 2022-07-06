@@ -28,7 +28,7 @@ RSpec.describe 'Appointments', type: :request do
         post "/api/v1/users/#{user.id}/appointment", params:
                           { appointment: {
                             description: my_appointment.description,
-                            city:my_appointment.city,
+                            city: my_appointment.city,
                             date: my_appointment.date,
                             user_id: user.id,
                             car_id: car.id
@@ -36,7 +36,7 @@ RSpec.describe 'Appointments', type: :request do
       end
 
       it 'returns the title' do
-        expect(json["description"]).to eq(my_appointment.description)
+        expect(json['description']).to eq(my_appointment.description)
       end
 
       it 'returns a created status' do
