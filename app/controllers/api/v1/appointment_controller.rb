@@ -5,16 +5,12 @@ class Api::V1::AppointmentController < ApplicationController
   end
 
   def create
-    appointment = Appointment.new(description: params[:description],
-                                  city: params[:city],
-                                  date: params[:date],
-                                  user_id: params[:user_id],
-                                  car_id: params[:car_id])
+    appointment = Appointment.new(appointment_params)
 
     if appointment.save
       render json: appointment
     else
-      render json: appointment.errors.full_messages, status: :unprocessable_entity
+      render json: appointment, status: :unprocessable_entity
     end
   end
 

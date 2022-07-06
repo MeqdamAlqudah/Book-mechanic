@@ -38,7 +38,6 @@ gem 'bootsnap', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
-gem 'factory_bot'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'database_cleaner'
@@ -54,6 +53,7 @@ group :development do
 end
 group :test do
   gem 'capybara'
+  gem 'factory_bot'
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
