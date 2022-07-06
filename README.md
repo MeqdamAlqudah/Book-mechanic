@@ -1,59 +1,82 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Appointments App (Back-end)
 
-> One paragraph statement about the project.
+A Final captone project to book an appointment with a mechanic to service a car. It follows a given design of the website but it has customized to meet the needs to of the project theme.
 
-![screenshot](./app_screenshot.png)
+Visit the [Front-end repository](https://github.com/rachidelaid/billionaire-appointment-front-end) for more information.
 
-Additional description about the project and its features.
+## Kanban board
+
+We are a team of four.
+
+[Visit our kanban board](https://github.com/MeqdamAlqudah/Book-mechanic/projects/1)
+
+[Link to screenshot of initial state](https://user-images.githubusercontent.com/71140133/175422564-606dfb24-8a0c-41da-b613-c39cae009b6a.PNG)
+
+## Preview
+
+![App-preview](https://github.com/orozCoding/billionares-pictures/blob/main/gif/app-prev.gif?raw=true)
+(Front-end)
+
+## Live version
+
+[App (Front-end)]()
+[Back-end]()
 
 ## Built With
-
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby on Rails
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+- Follow setup instructions below
 
 ### Prerequisites
 
+- Ruby
+- Git and Github
+- Terminal
+- Browser
+
 ### Setup
 
-### Install
+Follow [this link](https://github.com/MeqdamAlqudah/Book-mechanic-front-end) to visit the [back-end repository](https://github.com/MeqdamAlqudah/Book-mechanic) and start the server on localhost:3000.
 
-### Usage
+- Clone this repository `https://github.com/MeqdamAlqudah/Book-mechanic.git`
+- Cd or navigate into the directory and run `bundle install` to install dependencies
+- Run `rails db:create`
+- Run `rails db:migrate`
+- Run `rails db:seed`
+- Run `rails start` to start the server
 
-### Run tests
+This is an API only app. Use the [Front-end repository](https://github.com/MeqdamAlqudah/Book-mechanic-front-end.git) for an user interface.
 
-### Deployment
+Suggestions:
+Back-end should run in **localhost:3000**
+Front-end should run in **localhost:3001**
 
-
+# Credits
 
 ## Authors
 
-👤 **Author1**
+👤 **Daniel Yerimah**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Yerimah](https://github.com/yerimah)
+- Twitter: [iamdeewyne](https://twitter.com/iamdeewyne)
+- LinkedIn: [Daniel Yerimah](https://www.linkedin.com/in/daniel-yerimah/).
+  
+ **Meqdam Al-qudah**
 
-👤 **Author2**
+- [GitHub](https://github.com/MeqdamAlqudah)
+- [Twitter](https://twitter.com/MeqdamQudah)
+- [LinkedIn](www.linkedin.com/in/meqdam-al-qudah-7514a21b5)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+  
+👤 **Mphatso Lichapa**
+
+- GitHub: [@Lichapa](https://github.com/Lichapa) 
+- Twitter: [@LichapaMphatso](https://twitter.com/LichapaMphatso) 
+- LinkedIn: [mphatsolichapa](https://www.linkedin.com/in/mphatsolichapa) 
+
 
 ## 🤝 Contributing
 
@@ -67,9 +90,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Microverse](https://www.microverse.org/)
 
 ## 📝 License
 
