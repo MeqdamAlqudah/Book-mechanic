@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     user = User.where(email: params[:email])
-    render json: [user,params]
+    render json: params
   end
 
   # DELETE /resource/sign_out
